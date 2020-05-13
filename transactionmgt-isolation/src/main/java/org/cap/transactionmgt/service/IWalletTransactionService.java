@@ -9,10 +9,8 @@ import java.util.*;
 
 public interface IWalletTransactionService {
 
-	WalletTransaction addAmount(WalletAccount account,double amount);
-	
-	WalletTransaction deductAmount(WalletAccount account,double amount);
-	
-	void transferAmount(WalletAccount account_from,WalletAccount account_to,double amount);
-	
+	WalletTransaction save(WalletTransaction transaction);
+    WalletTransaction findById(int id);
+    List<WalletTransaction> fetchAll();
+    boolean deleteTransaction(int id);
 }
