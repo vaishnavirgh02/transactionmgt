@@ -1,0 +1,25 @@
+
+<form  #data="ngForm" (ngSubmit)="findTransactionById(data)">
+    <div>
+    <label>Id</label> 
+    <input type="number" name="transactionid" ngModel>
+    </div>
+    <input type="submit">
+    
+    </form>
+    
+    <div>
+    <h3>Found Transaction</h3>
+    <div *ngIf="foundStatus==='found'">
+    id={{ foundTransaction.transactionid }},
+    description={{ foundTransaction.description }},
+    dateoftransaction={{ foundTransaction.dateoftransaction }},
+    amount={{ foundTransaction.amount }},
+    accountbalance={{ foundTransaction.accountbalance }}
+    </div>
+    
+    <div *ngIf="foundStatus=='notfound'">
+        Transaction not found !
+    </div>
+    
+    </div>

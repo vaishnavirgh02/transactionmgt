@@ -1,0 +1,47 @@
+<p>add-transaction works!</p>
+<form  #data="ngForm"  
+(ngSubmit)="addTransaction(data)">
+    <div>   
+        <label>Description</label>
+        <input type="text" ngModel name="description">
+    </div>
+
+    <div>
+        <label>Date Of transaction</label>
+        <input type="date" ngModel name="dateoftransaction">
+    </div>
+    
+    <div>
+        <label>Amount</label>
+        <input type="number" ngModel name="amount">
+    </div>  
+
+    <div>
+        <label>AccountBalance</label>
+        <input type="number" ngModel name="accountbalance">
+    </div>  
+
+    <input type="submit" value="submit" >
+    
+</form>
+ 
+
+<div *ngIf="addedTransaction !==null">
+    <table border="1">
+        <tr>
+            <th>Transaction Id</th>
+            <th>Description</th>
+            <th>Date of Transaction</th>
+            <th>Amount</th>
+            <th>Account Balance</th>
+        </tr>
+    
+        <tr>
+            <th>{{ addedTransaction.transactionid }}</th>
+            <th>{{ addedTransaction.description }}</th>
+            <th>{{ addedTransaction.dateoftransaction }}</th>
+            <th>{{ addedTransaction.amount }}</th>
+            <th>{{ addedTransaction.accountbalance }}</th>
+        </tr>
+    </table>
+</div>

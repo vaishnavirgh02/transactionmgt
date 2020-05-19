@@ -1,0 +1,20 @@
+<p>show-transactions works!</p>
+<h1> Listed Transactions</h1>
+
+<table border="1">
+    <tr>
+        <th>Transaction Id</th>
+        <th>Description</th>
+        <th>Date of Transaction</th>
+        <th>Amount</th>
+        <th>Account Balance</th>
+    </tr>
+
+    <tr *ngFor="let trans of transactions">
+        <th>{{ trans.transactionid }}</th>
+        <th>{{ trans.description }}</th>
+        <th>{{ trans.dateoftransaction }}</th>
+        <th>{{ trans.amount }}</th>
+        <th>{{ trans.accountbalance }}</th>
+    </tr>
+</table>
