@@ -30,7 +30,8 @@ public class WalletTransactionDto {
 		this.description = description;
 	}
 	public LocalDateTime getDateoftransaction() {
-		return dateoftransaction;
+		LocalDateTime ldt=LocalDateTime.now();
+		return ldt;
 	}
 	public void setDateoftransaction(LocalDateTime dateoftransaction) {
 		this.dateoftransaction = dateoftransaction;

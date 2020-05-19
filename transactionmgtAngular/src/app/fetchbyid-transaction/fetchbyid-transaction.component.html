@@ -11,11 +11,15 @@
     <div>
     <h3>Found Transaction</h3>
     <div *ngIf="foundStatus==='found'">
-    id={{ foundTransaction.transactionid }},
-    description={{ foundTransaction.description }},
-    dateoftransaction={{ foundTransaction.dateoftransaction }},
-    amount={{ foundTransaction.amount }},
-    accountbalance={{ foundTransaction.accountbalance }}
+        <table border="1">
+            <tr>
+                <th>id={{ foundTransaction.transactionid }}</th>
+                <th>description={{ foundTransaction.description }}</th>
+                <th>dateoftransaction={{ foundTransaction.dateoftransaction }}</th>
+                <th>amount={{ foundTransaction.amount }}</th>
+                <th>accountbalance={{ foundTransaction.accountbalance }}</th>
+            </tr>
+        </table>
     </div>
     
     <div *ngIf="foundStatus=='notfound'">

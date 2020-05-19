@@ -13,4 +13,5 @@ public interface IWalletTransactionService {
     WalletTransaction findById(int id);
     List<WalletTransaction> fetchAll();
     boolean deleteTransaction(int id);
+    List<WalletTransaction> findByAccount(int id);
 }

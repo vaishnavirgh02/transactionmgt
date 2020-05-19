@@ -14,6 +14,7 @@ public class WalletTransaction {
 	 @Id
 	 @GeneratedValue
 	private int transactionid;
+	 private int account;
 	private String description;
 	private LocalDateTime dateoftransaction;
 	private double amount;
@@ -65,8 +66,16 @@ public class WalletTransaction {
 	@Override
 	public int hashCode() {
 		
-		return transactionid;
+		return this.transactionid;
 	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null|| !(obj instanceof WalletTransaction))
+			return false;
+		WalletTransaction walletTransaction=(WalletTransaction) obj;
+		return this.description.equals(walletTransaction.getDescription());
 	
 	
-}
+	}}

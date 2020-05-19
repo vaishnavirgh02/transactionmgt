@@ -3,6 +3,7 @@ package org.cap.transactionmgt.dao;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.cap.transactionmgt.entities.WalletTransaction;
@@ -11,5 +12,5 @@ import org.cap.transactionmgt.entities.WalletTransaction;
 public interface WalletTransactionDao extends JpaRepository<WalletTransaction,Integer> {
 
 	
-	
+	List <WalletTransaction> findByAccount(int account);
 }

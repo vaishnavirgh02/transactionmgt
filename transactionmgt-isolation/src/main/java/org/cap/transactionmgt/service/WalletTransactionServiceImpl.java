@@ -16,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import org.cap.transactionmgt.dao.WalletTransactionDao;
 import org.cap.transactionmgt.entities.WalletTransaction;
+import org.cap.transactionmgt.exception.AccountNotFoundException;
 import org.cap.transactionmgt.exception.TransactionNotFoundException;
 
 @Service
@@ -25,13 +26,6 @@ public class WalletTransactionServiceImpl implements IWalletTransactionService {
 	@Autowired
     private WalletTransactionDao transactionDao;
 	
-	
-	    public void setWalletTransactionDao(WalletTransactionDao dao) {
-	        this.transactionDao = dao;
-	    }
-	    public WalletTransactionDao getWalletTransactionDao() {
-	        return transactionDao;
-	    }
 
 		@Override
 		public WalletTransaction save(WalletTransaction transaction) {
@@ -70,5 +64,24 @@ public class WalletTransactionServiceImpl implements IWalletTransactionService {
 				transactionDao.deleteById(id);
 		    }
 		return true;
+		}
+		
+		@Override
+		public List <WalletTransaction> findByAccount(int account) {
+			
+			
+
+		       List <WalletTransaction> transactions =transactionDao.findByAccount(account);
+		       
+		       if(!transactions.isEmpty())
+		       {
+		    	   return transactions ;
+		       }
+		       else
+		       {
+			     throw new AccountNotFoundException("Account not found for account="+account);
+		       }
+
+
 		}
 }
